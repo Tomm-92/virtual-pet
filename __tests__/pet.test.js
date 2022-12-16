@@ -47,6 +47,7 @@ describe('constructor', () => {
   
       expect(pet.fitness).toEqual(10);
     });
+
   });
 
   describe('feedPet', () => {
@@ -69,50 +70,77 @@ describe('constructor', () => {
   });
 
  describe('checkUp', () => {
-    it('checks if the pet needs a walk', () => {
-      const pet = new Pet('Prince');
 
-      pet.fitness = 2;
-      pet.checkUp();
-      expect(pet.health).toEqual('I need a walk');
-    }); 
-
-    it('checks if the pet is hungry', () => {
-      const pet = new Pet('Prince');
-  
-    pet.hunger = 6;
-    pet.checkUp();
-    expect(pet.health).toEqual('I am hungry');
-
-  });
-
-  it('checks if the pet needs a walk and feed', () => {
-    const pet = new Pet('Prince');
-
-  pet.fitness = 2;
-  pet.hunger = 6;
-  pet.checkUp();
-  expect(pet.health).toEqual('I am hungry AND I need a walk');
-
-});
-
-it('checks if the pet needs a walk', () => {
-  const pet = new Pet('Prince');
-
-  pet.fitness = 5;
-  pet.hunger = 3;
-  pet.checkUp();
-    expect(pet.health).toEqual('I am hungry AND I need a walk'); 
-
-  });
-
-  describe('checkUp', () => {
     it('checks if the pet needs a walk', () => {
         const pet = new Pet ('Prince');
         pet.fitness = 2;
         pet.checkUp();
         expect(pet.checkUp()).toBe('I need a walk')
+      });
+
+    
+      it('checks if the pet is hungry', () => {
+        const pet = new Pet ('Prince');
+        pet.hunger = 6;
+        pet.checkUp();
+        expect(pet.checkUp()).toBe('I am hungry')
+      });
+
+      it('checks if the pet is hungry and needs a walk', () => {
+        const pet = new Pet ('Prince');
+        pet.fitness = 3
+        pet.hunger = 6;
+        pet.checkUp();
+        expect(pet.checkUp()).toBe('I am hungry AND I need a walk')
+      });
 
 
+      it('checks if the pet is feeling great', () => {
+        const pet = new Pet ('Prince');
+        pet.fitness = 5
+        pet.hunger = 2;
+        pet.checkUp();
+        expect(pet.checkUp()).toBe('I feel great')
+      });
+
+      it('checks if the pet is still alive', () => {
+        const pet = new Pet ('Dave');
+        pet.age = 10
+        pet.hunger = 8  
+        pet.fitness = 3
+        pet.checkUp();
+        expect(pet.isAlive).toBe(true)
+      });
 });
 
+describe('isAlive', () => {
+  it('checks the pet is old enough to be alive', () => {
+      const pet = new Pet ('Dave');
+      pet.fitness = 0;
+      expect(pet.isAlive).toBe(false)
+    });
+
+  it('checks the pet is young enough to be alive', () => {
+      const pet = new Pet ('Dave');
+      pet.age = 30;
+      expect(pet.isAlive).toBe(false)
+    });
+  
+  it('checks if pets has starved', () => {
+      const pet = new Pet ('Dave');
+      pet.hunger = 20;
+      expect(pet.isAlive).toBe(false)
+    });
+
+    it('checks the pet is still alive', () => {
+      const pet = new Pet ('Dave');
+      pet.hunger = 8;
+      pet.age = 10;
+      expect(pet.isAlive).toBe(true)
+    }); 
+
+
+
+  });
+
+  
