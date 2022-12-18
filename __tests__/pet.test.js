@@ -20,6 +20,12 @@ describe('constructor', () => {
   });
 
   describe('growUp', () => {
+    it('throws en error if the pet is alive', () => {
+      const pet = new Pet('Fido');
+      pet.hunger = 20
+      expect (() => pet.growUp()).toThrow('Your pet is no longer alive');
+    });
+    
     it('increments the age by 1', () => {
       const pet = new Pet('Prince');
 
@@ -31,6 +37,15 @@ describe('constructor', () => {
   });
 
   describe('walkPet', () => {
+    
+    it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+
+      pet.fitness = 0;
+
+      expect(() => pet.walk()).toThrow('Your pet is no longer alive');
+    });
+    
     it('increments the fitness by 4', () => {
       const pet = new Pet('Prince');
 
@@ -51,6 +66,15 @@ describe('constructor', () => {
   });
 
   describe('feedPet', () => {
+    
+    it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 30;
+
+      expect(() => pet.feed()).toThrow('Your pet is no longer alive');
+    });
+   
     it('decreases the hunger by 3', () => {
       const pet = new Pet('Prince');
 
@@ -105,9 +129,6 @@ describe('constructor', () => {
 
       it('checks if the pet is still alive', () => {
         const pet = new Pet ('Dave');
-        pet.age = 10
-        pet.hunger = 8  
-        pet.fitness = 3
         pet.checkUp();
         expect(pet.isAlive).toBe(true)
       });
