@@ -5,6 +5,8 @@ const MINIMUM_HUNGER = 0;
 const REDUCE_HUNGER = 3;
 const ACCEPTABLE_HUNGER = 5
 const ACCEPTABLE_FITNESS = 3
+const MAXIMUM_HUNGER = 10
+const MAXIMUM_AGE = 30
 
 function Pet(name) {
     this.name = name;
@@ -15,7 +17,7 @@ function Pet(name) {
 
 Pet.prototype = {
     get isAlive() {
-        return this.fitness > 0 && this.hunger < 10 && this.age < 30;
+        return this.fitness > MINIMUM_FITNESS && this.hunger < MAXIMUM_HUNGER && this.age < MAXIMUM_AGE;
     }
 }
 
