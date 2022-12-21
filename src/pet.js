@@ -92,3 +92,20 @@ Pet.prototype.haveBaby = function (babyName) {
 
 
 module.exports = Pet;
+
+
+
+
+
+
+
+/* HAVE BABY and ADOPT CHILD - please ignore - this will be used for revision purposes only
+
+For adoptChild we are creating 2 instances of pet (via the test) e.g. 1 parent and 1 child. Then calling a method on the parent (via Pet) to push the child instances in to the parent.
+The children property of the parent is defined in the pet function as an emptry array and there is where we want to add the child to.
+
+For haveBaby we are only making one instance of pet which is the parent. Then calling a method on the parent pet which you pass the child's name (as opposed to object) into as an argument.
+Here we initiate a new instance of pet from inside the haveBaby method. 
+
+The outcome of the two approaches is the same but the number of instacnes of a new pet created are different. The benefit of the first method is that the parent objects children can then caontain objects
+that don't necessarily have to be an instance of pet. */
