@@ -99,6 +99,20 @@ module.exports = Pet;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* HAVE BABY and ADOPT CHILD - please ignore - this will be used for revision purposes only
 
 For adoptChild we are creating 2 instances of pet (via the test) e.g. 1 parent and 1 child. Then calling a method on the parent (via Pet) to push the child instances in to the parent.
