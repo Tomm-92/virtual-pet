@@ -1,3 +1,5 @@
+// Class Syntax Pet
+
 const MAXIMUM_FITNESS = 10;
 const MINIMUM_FITNESS = 0; 
 const FITNESS_INCREASE = 4;
@@ -80,13 +82,13 @@ return 'I feel great'
 
 }
 
-adoptChild() {
+adoptChild(child) {
     this.children.push(child);
 
 }
 
-haveBaby() {
-    const baby = new Pet1(babyName)
+haveBaby(babyname) {
+    const baby = new Pet1(babyname)
     this.children.push(baby);
 }
 }

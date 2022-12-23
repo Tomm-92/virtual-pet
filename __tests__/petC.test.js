@@ -1,3 +1,5 @@
+// Class Syntax Tests
+
 const Pet1 = require('../src/petC');
 
 describe('constructor', () => {
@@ -172,12 +174,12 @@ describe('walk', () => {
               parent.haveBaby('John');
               expect(parent.children[0].name).toBe('John');
               expect(parent.children[0].fitness).toEqual(10);
-              expect(parent.children[0]).toBeInstanceOf(Pet);
+              expect(parent.children[0]).toBeInstanceOf(Pet1);
       
               parent.haveBaby('Mark');
               expect(parent.children[1].name).toBe('Mark');
               expect(parent.children[1].fitness).toEqual(10);
-              expect(parent.children[1]).toBeInstanceOf(Pet);
+              expect(parent.children[1]).toBeInstanceOf(Pet1);
             });
           });
 

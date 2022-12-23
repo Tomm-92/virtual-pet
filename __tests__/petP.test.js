@@ -1,3 +1,6 @@
+
+// PROTOTYPE SYNTAX PET
+
 const Pet = require('../src/petP');
 
 describe('constructor', () => {
