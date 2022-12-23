@@ -1,4 +1,6 @@
 // GAME STYLE PET
+POTION_HEAL = 10;
+
 
 class Groot {
     constructor(name, battlecry, moves=[]) {
@@ -6,8 +8,9 @@ class Groot {
         this.battlecry = battlecry;
         this.moves = moves;
         this.weakness = this.weakness;
+        this.specialskill = this.skills;
         this.health = 100;
-        this.weakness = this.weakness;
+       
     }
 
 get isAlive() {
@@ -23,7 +26,16 @@ if (hasMove) {
     return `${this.name} doesn't have that move!`;
 }
 }
+
+heal(groot) {
+    this.health += POTION_HEAL
 }
+
+}
+
+
+
+
 
  
 

@@ -38,3 +38,11 @@ describe ('attack', () => {
     expect(target.health).toEqual(70);
     })
 });
+
+describe ('heal', () => {
+    it('allows the groot to heal themselves', () => {
+    const target = new Groot('Cercei');
+    target.heal();
+    expect(target.health).toEqual(110);
+    })
+});
