@@ -18,6 +18,10 @@ class Pet1 {
     this.children = [];
 }
 
+get isAlive() {
+    return this.fitness > MINIMUM_FITNESS && this.hunger < MAXIMUM_HUNGER && this.age < MAXIMUM_AGE;
+}
+
 growUp() {
     if (!this.isAlive) {
         throw new Error('Your pet is no longer alive');
@@ -82,7 +86,7 @@ adoptChild() {
 }
 
 haveBaby() {
-    const baby = new Pet(babyName)
+    const baby = new Pet1(babyName)
     this.children.push(baby);
 }
 }

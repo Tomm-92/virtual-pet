@@ -1,4 +1,4 @@
-const Pet = require('../src/pet');
+const Pet = require('../src/petP');
 
 describe('constructor', () => {
   it('returns an object', () => {
