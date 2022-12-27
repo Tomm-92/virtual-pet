@@ -37,8 +37,6 @@ const battleCries = [
 ];
 
 const attackMoves = [
-    'Pound',
-    'Double Slap',
     'Comet Punch',
     'Mega Punch',
     'Thunder Punch',

@@ -32,7 +32,7 @@ describe ('isAlive', () => {
 describe ('attack', () => {
     it('allows the groot to attack their target if they have access to the move', () => {
     const fireball = new Move(30);
-    const groot = new Groot('Tyrion','Ready for Battle',[fireball]);
+    const groot = new Groot('Tyrion',[fireball]);
     const target = new Groot('Cercei');
     groot.attack(target,fireball);
     expect(target.health).toEqual(70);

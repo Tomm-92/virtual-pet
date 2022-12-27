@@ -1,7 +1,7 @@
 
 // PROTOTYPE SYNTAX PET
 
-const Pet = require('../src/petP');
+const Pet = require('../src/petTrack');
 
 describe('constructor', () => {
   it('returns an object', () => {

@@ -1,10 +1,12 @@
 const {
-    damageValues
+    damageValues,
+    attackMoves
 } = require("./gameProperties.js");
 
 class Move {
-    constructor(damage) {
-     this.damage = damageValues[Math.floor(Math.random() * damageValues.length)];
+    constructor() {
+        this.damage = damageValues[Math.floor(Math.random() * damageValues.length)];
+        this.name = attackMoves.sort(() => 0.5 - Math.random()).slice(0,3);
     }
 
  }
