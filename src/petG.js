@@ -1,20 +1,32 @@
 // GAME STYLE PET
+const {
+    grootTypes,
+    battleCries,
+    attackMoves
+} = require("./gameProperties.js");
+
+
 POTION_HEAL = 10;
 
 
 class Groot {
-    constructor(name, battlecry, moves=[]) {
-        this.name = name;
-        this.battlecry = battlecry;
-        this.moves = moves;
+    constructor(name, moves=[]) {
+        this.name = name
+        this.battlecry = battleCries[Math.floor(Math.random() * battleCries.length)];
+        this.moves = attackMoves.sort(() => 0.5 - Math.random()).slice(0,3);
+        this.species = grootTypes[Math.floor(Math.random() * grootTypes.length)];
         this.weakness = this.weakness;
-        this.specialskill = this.skills;
         this.health = 100;
        
     }
 
 get isAlive() {
     return this.health > 0;
+}
+
+battleCry(groot) {
+    this.health += 5
+    return `${this.name} shouts ${this.battlecry}`
 }
 
 attack(target,move) {
@@ -29,6 +41,7 @@ if (hasMove) {
 
 heal(groot) {
     this.health += POTION_HEAL
+    return `${this.name} health increased by ${POTION_HEAL}`;
 }
 
 }

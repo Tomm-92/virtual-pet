@@ -1,6 +1,10 @@
+const {
+    damageValues
+} = require("./gameProperties.js");
+
 class Move {
     constructor(damage) {
-     this.damage = damage;
+     this.damage = damageValues[Math.floor(Math.random() * damageValues.length)];
     }
 
  }
