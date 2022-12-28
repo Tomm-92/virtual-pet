@@ -1,7 +1,7 @@
 const {
     damageValues,
     attackMoves
-} = require("./gameProperties.js");
+} = require("./furtherWork/gameProperties.js");
 
 class Move {
     constructor() {

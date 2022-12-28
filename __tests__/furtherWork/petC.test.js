@@ -1,6 +1,6 @@
 // Class Syntax Tests
 
-const Pet1 = require('../src/petC');
+const Pet1 = require('../../src/furtherWork/petC');
 
 describe('constructor', () => {
   it('returns an object', () => {

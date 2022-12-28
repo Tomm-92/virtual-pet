@@ -1,7 +1,7 @@
 // GAME STYLE PET
 
-const Groot = require('../src/petG');
-const Move = require('../src/petGmoves');
+const Groot = require('../../src/furtherWork/petG');
+const Move = require('../../src/petGmoves');
 
 describe ('constructor', () => {
     it('returns an object', () => {
